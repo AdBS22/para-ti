@@ -1,6 +1,6 @@
 body {
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,22 +10,29 @@ body {
 
 .card {
   background: white;
-  padding: 30px;
+  padding: 35px;
   border-radius: 20px;
   max-width: 700px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+ box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
-  font-size: 2.5rem;
+ font-size: 2.5rem;
+  margin-bottom: 15px;
   color: #e75480;
+}
+.nombre {
+  font-family: 'Pacifico', cursive;
+  color: #e75480;
+  font-size: 1.2em;
 }
 
 .mensaje {
-  font-size: 20px;
+  font-size: 18px;
   margin: 20px 0;
-  line-height: 1.5;
+color: #444;
+  line-height: 1.7;
 }
 
 .galeria {
@@ -40,9 +47,47 @@ h1 {
   height: 150px;
   object-fit: cover;
   border-radius: 15px;
+ box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.galeria img:hover {
+  transform: scale(1.05);
 }
 
 .firma {
-  margin-top: 20px;
+  margin-top: 25px;
   font-style: italic;
+color: #777;
+}
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+#lightbox img {
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
