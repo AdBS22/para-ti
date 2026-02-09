@@ -11,10 +11,26 @@ body {
 .card {
   background: white;
   padding: 35px;
+  margin: 20px;
   border-radius: 20px;
   max-width: 700px;
   text-align: center;
  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.btn-musica {
+  background: #e75480;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+}
+
+.btn-musica:hover {
+  background: #d6456f;
 }
 
 h1 {
@@ -90,4 +106,32 @@ color: #777;
     transform: scale(1);
     opacity: 1;
   }
+}
+.efectos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.efectos span {
+  position: absolute;
+  top: -10%;
+  animation: caer linear infinite;
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* Asegura que la tarjeta esté encima */
+.card {
+  position: relative;
+  z-index: 1;
 }

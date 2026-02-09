@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="efectos"></div>
   <div class="card">
     <h1>🎉 Feliz Cumpleaños <span class="nombre">Maite</span> 🎉</h1>
 
@@ -56,7 +56,11 @@
   pero intenté poner las que encontré, porque cada una guarda un recuerdo bonito contigo 🤍.
 </p>
 
+<button class="btn-musica" onclick="toggleMusica()">🎶 Una Pequeña Serenata 🎸</button>
 
+<audio id="musica">
+  <source src="audio/Sabes una cosa.mp3" type="audio/mpeg">
+</audio>
     <div class="galeria">
       <img src="fotos/foto1.jpeg"  onclick="abrirImagen(this.src)">
       <img src="fotos/foto3.jpeg"  onclick="abrirImagen(this.src)">
@@ -80,8 +84,8 @@
 
     
     <p class="firma">
-      Con mucho cariño,<br>
-      Adrian
+      Con mucho cariño<br>
+      -Adrian
     </p>
   </div>
 <div id="lightbox" onclick="cerrarImagen()">
@@ -96,6 +100,35 @@
 
   function cerrarImagen() {
     document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+<script>
+  const musica = document.getElementById("musica");
+  let reproduciendo = false;
+
+  function toggleMusica() {
+    if (!reproduciendo) {
+      musica.play();
+      reproduciendo = true;
+      document.querySelector(".btn-musica").textContent = "⏸️ Pausar música";
+    } else {
+      musica.pause();
+      reproduciendo = false;
+      document.querySelector(".btn-musica").textContent = "🎶 Una Pequeña Serenata 🎸";
+    }
+  }
+</script>
+<script>
+  const contenedor = document.querySelector('.efectos');
+  const emojis = ['🌸', '💖', '✨'];
+
+  for (let i = 0; i < 30; i++) {
+    const efecto = document.createElement('span');
+    efecto.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    efecto.style.left = Math.random() * 100 + 'vw';
+    efecto.style.animationDuration = 6 + Math.random() * 6 + 's';
+    efecto.style.fontSize = 16 + Math.random() * 22 + 'px';
+    contenedor.appendChild(efecto);
   }
 </script>
 </body>
