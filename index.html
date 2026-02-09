@@ -91,7 +91,34 @@
 <div id="lightbox" onclick="cerrarImagen()">
   <img id="lightbox-img">
 </div>
+<script>
+  const fechaCumple = new Date("2026-02-22"); // AAAA-MM-DD
+  const hoy = new Date();
 
+  if (hoy < fechaCumple) {
+ 
+    document.body.innerHTML = `
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        text-align:center;
+        font-family:Arial;
+        background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+      ">
+        <div>
+          <h1>🎁 Sorpresa 🎁</h1>
+          <div class="galeria">
+      <img src="fotos/Gato.jpeg" style="width:150px">
+
+    </div>
+
+        </div>
+      </div>
+    `;
+  }
+</script>
 <script>
   function abrirImagen(src) {
     document.getElementById("lightbox-img").src = src;
@@ -129,6 +156,33 @@
     efecto.style.animationDuration = 6 + Math.random() * 6 + 's';
     efecto.style.fontSize = 16 + Math.random() * 22 + 'px';
     contenedor.appendChild(efecto);
+  }
+</script>
+<script>
+  const fechaCumple = new Date("2026-02-22"); // AAAA-MM-DD
+  const hoy = new Date();
+
+  if (hoy < fechaCumple) {
+ 
+    document.body.innerHTML = `
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        text-align:center;
+        font-family:Arial;
+        background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+      ">
+        <div>
+          <h1>🎁 Sorpresa 🎁</h1>
+          <div class="galeria">
+      <img src="fotos/Gato.jpeg"  onclick="abrirImagen(this.src)">
+    </div>
+
+        </div>
+      </div>
+    `;
   }
 </script>
 </body>
